@@ -1,0 +1,6 @@
+torch>=1.6.0
+numpy>=1.19.0
+pyyaml>=5.4.0
+tqdm>=4.60.0
+tensorboard>=2.5.0
+pytest>=6.2.0
