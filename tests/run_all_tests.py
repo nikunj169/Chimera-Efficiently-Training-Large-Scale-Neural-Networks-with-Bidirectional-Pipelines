@@ -15,46 +15,51 @@ def run_tests():
     print("Running Chimera Complete Test Suite")
     print("="*60)
     
-    # Test Person A
-    print("\n" + "="*60)
-    print("PERSON A TESTS")
-    print("="*60)
+    test_files = [
+        "test_edge_cases_and_correctness.py",
+        "test_integration_complete.py",
+        "test_paper_implementation_complete.py",
+        "test_person_a_implementation.py",
+        "test_person_b_implementation.py",
+        "run_validation.py",
+    ]
     
-    result_a = subprocess.run(
-        [sys.executable, str(test_dir / "test_person_a_implementation.py")],
-        capture_output=False
-    )
-    
-    # Test Person B
-    print("\n" + "="*60)
-    print("PERSON B TESTS")
-    print("="*60)
-    
-    result_b = subprocess.run(
-        [sys.executable, str(test_dir / "test_person_b_implementation.py")],
-        capture_output=False
-    )
-    
+    all_passed = True
+    results = {}
+
+    for test_file in test_files:
+        print(f"\n{'='*60}")
+        print(f"RUNNING {test_file.upper()}")
+        print(f"{'='*60}")
+        
+        result = subprocess.run(
+            [sys.executable, str(test_dir / test_file)],
+            capture_output=False # Let the test script print its own output
+        )
+        
+        if result.returncode != 0:
+            all_passed = False
+            results[test_file] = "FAILED"
+        else:
+            results[test_file] = "PASSED"
+            
     # Summary
     print("\n" + "="*60)
-    print("TEST SUMMARY")
+    print("OVERALL TEST SUMMARY")
     print("="*60)
     
-    if result_a.returncode == 0:
-        print("✓ Person A tests: PASSED")
+    for test_file, status in results.items():
+        if status == "PASSED":
+            print(f"✓ {test_file}: PASSED")
+        else:
+            print(f"✗ {test_file}: FAILED")
+            
+    if all_passed:
+        print("\n✅ All tests passed!")
+        sys.exit(0)
     else:
-        print("✗ Person A tests: FAILED")
-    
-    if result_b.returncode == 0:
-        print("✓ Person B tests: PASSED")
-    else:
-        print("✗ Person B tests: FAILED")
-    
-    # Exit with error if any failed
-    if result_a.returncode != 0 or result_b.returncode != 0:
+        print("\n❌ Some tests failed!")
         sys.exit(1)
-    
-    print("\n✅ All tests passed!")
 
 
 if __name__ == "__main__":

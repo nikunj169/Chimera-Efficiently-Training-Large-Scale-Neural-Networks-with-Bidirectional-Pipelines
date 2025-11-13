@@ -1,0 +1,27 @@
+[project]
+name = "chimera"
+version = "0.1.0"
+description = "Efficiently Training Large-Scale Neural Networks with Bidirectional Pipelines"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" },
+]
+dependencies = [
+    "torch>=1.10",
+    "numpy",
+]
+requires-python = ">=3.8"
+readme = "docs/README.md"
+license = { file = "LICENSE" } # Assuming a LICENSE file will be added
+
+[project.urls]
+"Homepage" = "https://github.com/your_username/chimera"
+"Bug Tracker" = "https://github.com/your_username/chimera/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chimera*"]
+exclude = ["tests*", "examples*", "scripts*", "docs*"]
