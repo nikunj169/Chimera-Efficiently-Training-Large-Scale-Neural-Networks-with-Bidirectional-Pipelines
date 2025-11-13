@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+.Python
+env/
+nhpc/
+*.egg-info/
+.pytest_cache/
+
+# IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Machine Learning / PyTorch
+data/
+logs/
+checkpoints/
+models/
+runs/
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Build artifacts
+build/
+dist/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Project-specific temporary files
+project_explanation.txt
+2107.06925v5.pdf
+plan.txt
+research_ideas.txt
