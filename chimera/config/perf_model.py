@@ -136,7 +136,10 @@ class PerformanceModel:
         total_stages = D
         
         # More eager stages → more overlap
-        # Rule of thumb: 50% overlap per eager stage
+        # Rule of thumb: 50% overlap per eager stage, capped at 70%
+        if num_eager_stages == total_stages:
+            return 0.7 # All stages eager, assume 70% overlap
+        
         overlap = 0.5 * (num_eager_stages / total_stages)
         
         return min(overlap, 0.7)  # Cap at 70%

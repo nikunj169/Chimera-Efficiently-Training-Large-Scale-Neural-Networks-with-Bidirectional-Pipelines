@@ -5,11 +5,6 @@ CHIMERA INTERACTIVE PLAYGROUND
 Interactive tool to explore Chimera pipeline parallelism with your own inputs.
 Visualize schedules, analyze performance, and experiment with configurations.
 """
-
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent))
-
 import torch
 from chimera.engine import BidirectionalSchedule, ScheduleType, StagePartitioner
 from chimera.models import BertConfig, BertForPipelineParallelism, GPT2Config, GPT2ForPipelineParallelism
