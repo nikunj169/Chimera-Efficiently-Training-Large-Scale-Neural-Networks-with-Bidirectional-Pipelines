@@ -10,7 +10,7 @@ Training state-of-the-art deep learning models, such as large language models (L
 
 **Chimera** aims to solve this by introducing a **bidirectional pipeline scheduling algorithm**. This approach significantly reduces idle periods, leading to more balanced memory consumption and higher training throughput. Our implementation is based on the research detailed in the paper:
 
-**[2107.06925v5.pdf: Chimera: Efficiently Training Large-Scale Neural Networks with Bidirectional Pipelines](2107.06925v5.pdf)**
+**[Chimera: Efficiently Training Large-Scale Neural Networks with Bidirectional Pipelines](Chimera Efficiently Training Large-Scale Neural Networks with Bidirectional Pipelines.pdf)**
 
 ## Key Features & Impact
 
@@ -66,7 +66,7 @@ This section provides a detailed look into each significant Python file, explain
     *   **Outputs:** None (static file).
     *   **What it shows:** The project's software environment.
 
-*   **`2107.06925v5.pdf`**
+*   **`Chimera Efficiently Training Large-Scale Neural Networks with Bidirectional Pipelines.pdf`**
     *   **Purpose:** The original research paper detailing the Chimera method.
     *   **Working:** Provides the theoretical foundation, algorithms, and experimental results that this project implements.
     *   **Inputs:** None (static file).
